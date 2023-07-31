@@ -92,7 +92,7 @@ export class AppComponent implements OnInit{
           enable: true,
           area: 800,
         },
-        value: 86,
+        value: 140,
         minimumValue:86,
       },
       opacity: {
