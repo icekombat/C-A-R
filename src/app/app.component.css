@@ -8,7 +8,6 @@ section{
 
 #particles-bg{
   position: fixed;
-  background: linear-gradient(90deg, rgba(1,0,17,1) 0%, rgba(13,117,128,1) 45%,rgba(13,117,128,1) 55%,rgba(1,0,17,1) 100%);
   width: 100%;
   height: 200svh;
   z-index: 0;
@@ -28,10 +27,11 @@ section{
   flex-direction: column;
   align-content: center;
   justify-content: flex-start;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(4px);
   background: hsla(0,0%,100%,.10);
   padding: 10px;
-  height: fit-content;
+  height: 50svh;
+  min-height: fit-content;
 }
 
 .flex-item{
@@ -47,6 +47,7 @@ section{
   padding: 32px;
   margin: 10px;
   width: 400px;
+  max-width: 100svw;
 }
 
 .main-heading{

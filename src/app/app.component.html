@@ -7,7 +7,7 @@
   <section id="landing" class=" centered-flex-container col-flex-direction section-wrapper">
 
     <div >
-      <h1 class="main-heading">Capital Allocation Research</h1>
+      <h1 class="main-heading">{{this.title}}</h1>
       <h2>  Risk Mitigation Yield Maximization </h2>
     </div>
   </section>
@@ -26,9 +26,6 @@
         (ngSubmit)="send()"
         id="contact_form"
       >
-        <h1>
-          Angular Contact Form
-        </h1>
         <div>
           <label for="name">name</label>
           <input
@@ -63,15 +60,6 @@
             type="checkbox"
             id="company"
             name="company"
-          />
-        </div>
-        <div>
-          <label for="number">number</label>
-          <input
-            formControlName="number"
-            type="text"
-            id="number"
-            name="number"
           />
         </div>
         <div>

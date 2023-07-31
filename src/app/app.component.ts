@@ -10,7 +10,7 @@ import {FormBuilder, FormGroup} from "@angular/forms";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title:string = 'C-A-R';
+  title:string = 'Capital Allocation Research';
 
   constructor(private formBuilder: FormBuilder) {
   }
@@ -24,7 +24,8 @@ export class AppComponent implements OnInit{
 
   send(): void {
     //send data to backend
-    const { name, email,country,company,number,goals } = this.form.value;
+    const { name, email,country,company,goals } = this.form.value;
+    console.log(this.form.value)
   }
 
   private buildForm(): void {
@@ -33,7 +34,6 @@ export class AppComponent implements OnInit{
       email: this.formBuilder.control(null),
       country: this.formBuilder.control(null),
       company: this.formBuilder.control(null),
-      number: this.formBuilder.control(null),
       goals:this.formBuilder.control(null)
     });
   }
@@ -61,7 +61,7 @@ export class AppComponent implements OnInit{
           quantity: 4,
         },
         repulse: {
-          distance: 100,
+          distance: 60,
           duration: 0.4,
         },
       },
@@ -72,7 +72,7 @@ export class AppComponent implements OnInit{
       },
       links: {
         color: "#fff",
-        distance: 170,
+        distance: 100,
         enable: true,
         opacity: 0.5,
         width: 1,
@@ -93,6 +93,7 @@ export class AppComponent implements OnInit{
           area: 800,
         },
         value: 86,
+        minimumValue:86,
       },
       opacity: {
         value: 0.7,
