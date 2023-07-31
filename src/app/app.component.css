@@ -1,0 +1,82 @@
+section{
+  margin: 0;
+  padding: 0;
+  position: relative;
+  height: 100svh;
+  width: 100%;
+}
+
+#particles-bg{
+  position: fixed;
+  background: linear-gradient(90deg, rgba(1,0,17,1) 0%, rgba(13,117,128,1) 45%,rgba(13,117,128,1) 55%,rgba(1,0,17,1) 100%);
+  width: 100%;
+  height: 200svh;
+  z-index: 0;
+}
+#fixed-heading{
+  position: fixed;
+}
+#landing{
+  color: white;
+  align-content: center;
+}
+
+#what-we-do{
+}
+
+#contact-us{
+  flex-direction: column;
+  align-content: center;
+  justify-content: flex-start;
+  backdrop-filter: blur(8px);
+  background: hsla(0,0%,100%,.10);
+  padding: 10px;
+  height: fit-content;
+}
+
+.flex-item{
+  backdrop-filter: blur(8px);
+  background: hsla(0,0%,100%,.10);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-self: center;
+  align-self: center;
+  justify-content: space-between;
+  padding: 32px;
+  margin: 10px;
+  width: 400px;
+}
+
+.main-heading{
+  font-size: 64px;
+  padding: 5px;
+}
+
+.centered-flex-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.col-flex-direction{
+  flex-direction: column;
+}
+
+/*CONTACT FORM*/
+
+.contactform{
+  border: solid 3px white;
+  margin: 0 auto;
+  max-width: 650px;
+  max-height: 650px;
+  position: relative;
+  width: 100%;
+}
+
+#contact_form{
+
+}
