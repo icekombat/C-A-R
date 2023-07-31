@@ -47,7 +47,7 @@ section{
   padding: 32px;
   margin: 10px;
   width: 400px;
-  max-width: 100svw;
+  max-width: 100%;
 }
 
 .main-heading{
