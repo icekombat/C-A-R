@@ -28,6 +28,7 @@ export class ContactFormComponent {
   onSubmit(){
     this.validateInput()
     console.log(this.contactInfo)
+    alert(this.contactInfo)
   }
 
   isEmailInputCorrect:boolean=true;

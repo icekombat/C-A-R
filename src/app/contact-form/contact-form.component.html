@@ -1,9 +1,10 @@
+<div id="contact_form">
 <form (ngSubmit)="onSubmit()" class="form">
 <!--
   <p>form model state</p>
   <pre>{{contactInfo |json}}</pre>
 -->
-  <div class="content">
+  <div class="content grid-item">
     <div class="form-field">
       <label for="name" class="label-for-input">
         <input
@@ -13,7 +14,7 @@
           class="input-field"
           [(ngModel)]="contactInfo.name"
         />
-        <span class="input-description" *ngIf="contactInfo.name==''">Your name</span>
+          <span class="input-description" *ngIf="contactInfo.name==''">Your name</span>
       </label>
 
     </div>
@@ -41,7 +42,7 @@
           class="input-field"
           [(ngModel)]="contactInfo.country"
         />
-        <span class="input-description" *ngIf="contactInfo.country == ''">country</span>
+        <span class="input-description" *ngIf="contactInfo.country == ''">Country</span>
       </label>
 
     </div>
@@ -78,29 +79,27 @@
     ></textarea>
   </div>
 -->
-  <div class="consent"></div>
 
-  <div class="textBoxContainer">
+  <div class="textBoxContainer grid-item">
     <div class="form-field">
-      <label for="message" class="textarea-label">message</label>
-      <textarea
+      <label for="message" class="textarea-label">
+        <textarea
         id="message"
         name="message"
         class="message-input"
         [(ngModel)]="contactInfo.message"
       ></textarea>
+
+        <span>Your message</span>
+
+      </label>
     </div>
   </div>
 
-  <div class="submit">
-    <div class="center">
-      <button class="btn" type="submit">
-        <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
-          <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
-          <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
-        </svg>
-        <span>HOVER ME</span>
+  <div class="submit grid-item">
+      <button class="css-button-sliding-to-top--black" type="submit">
+        send
       </button>
-    </div>
   </div>
 </form>
+</div>

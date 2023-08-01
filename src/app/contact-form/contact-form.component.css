@@ -1,23 +1,75 @@
-.form{
-  grid-column-gap: 100px;
-  display: grid;
-  grid-template-areas:
-"content  textBoxContainer"
-"consent submit  ";
-  grid-template-columns: auto 540px;
+#contact_form{
+  width: 100%;
+  max-width: 1500px;
 }
 
+.form{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-auto-rows: minmax(100px,auto);
+  gap: 30px;
+  grid-template-areas:
+    "content textBoxContainer"
+    "content submit"
+  ;
+}
+.grid-item{
+/*TODO: items anpassen*/
+}
+
+/*TODO: Content*/
 .content{
-  display: flex;
-  flex-wrap: wrap;
   grid-area: content;
-  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.input-field{
+  width: 100%;
+}
+.form-field{
+  margin-bottom: 12px;
+  display: inline-block;
+  position: relative;
+  max-width: 500px;
 }
 
 .textBoxContainer{
-  grid-area:   textBoxContainer;
+  grid-area: textBoxContainer;
 }
 
+#message{
+  height: 200px;
+  width: 100%;
+}
+
+.submit{
+  grid-area: submit;
+}
+
+@media screen and (max-width: 760px) {
+  .form{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 0.3fr;
+    grid-template-areas:
+    "content"
+    "textBoxContainer"
+    "submit"
+  ;
+  }
+}
+
+/*Copied from old project*/
+
+.label-for-input{
+  display: inline-block;
+  font-size: 18px;
+  line-height: 1.2;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
 .textarea-label{
   color: #f7f7f7;
   font-weight: 400;
@@ -41,33 +93,19 @@
   width: 100%;
 }
 
-.consent{
-  grid-area: consent;
-}
-
-.submit{
-  grid-area: submit;
-}
-
-.form-field{
-  margin-bottom: 12px;
+.input-description{
+  border-color: #777d87;
+  color: #777d87;
+  cursor: text;
   display: flex;
-  position: relative;
+  max-height: 100%;
+  position: absolute;
+  transition: all .3s ease-in-out;
   width: 100%;
-
-}
-
-.checkbox{
-
-}
-
-.label-for-input{
-  display: inline-block;
   font-size: 18px;
-  line-height: 1.2;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
+  line-height: 1.333;
+  top: 20px;
+  left: 5px;
 }
 
 .input-field{
@@ -85,73 +123,4 @@
   position: relative;
   transition: box-shadow .4s;
   width: 100%;
-}
-
-.input-description{
-  border-color: #777d87;
-  color: #777d87;
-  cursor: text;
-  display: flex;
-  max-height: 100%;
-  position: absolute;
-  transition: all .3s ease-in-out;
-  width: 100%;
-  font-size: 18px;
-  line-height: 1.333;
-  top: 20px;
-  left: 5px;
-}
-
-
-@media screen and (max-width: 900px) {
-
-    .form{
-      grid-template-areas:
-        "content"
-      "textBoxContainer"
-      "consent"
-      "submit";
-    }
-  }
-
-.center {
-  width: 180px;
-  height: 60px;
-  position: absolute;
-}
-
-.btn {
-  width: 180px;
-  height: 60px;
-  cursor: pointer;
-  background: transparent;
-  border: 1px solid #91C9FF;
-  outline: none;
-  transition: 1s ease-in-out;
-}
-
-svg {
-  position: absolute;
-  left: 0;
-  top: 0;
-  fill: none;
-  stroke: #fff;
-  stroke-dasharray: 150 480;
-  stroke-dashoffset: 150;
-  transition: 1s ease-in-out;
-}
-
-.btn:hover {
-  transition: 1s ease-in-out;
-  background: rgba(13,117,128,1);
-}
-
-.btn:hover svg {
-  stroke-dashoffset: -480;
-}
-
-.btn span {
-  color: white;
-  font-size: 18px;
-  font-weight: 100;
 }

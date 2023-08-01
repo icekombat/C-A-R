@@ -31,7 +31,7 @@ section{
   background: hsla(0,0%,100%,.10);
   padding-left:50px;
   padding-right:50px ;
-  height: 600px;
+  height: 700px;
   min-height: fit-content;
 }
 
@@ -80,13 +80,17 @@ section{
   width: 100%;
 }
 
-#contact_form{
-
+.contact-flex-item{
+  width: 100%;
 }
 
-@media screen and (max-width: 900px) {
+#contactform{
+  display: flex;
+  justify-content: center;
+}
 
-  #contact_form{
-    flex-direction: column;
+@media screen and (max-width: 760px) {
+    #contact-us{
+      min-height: 800px;
+    }
   }
-}
