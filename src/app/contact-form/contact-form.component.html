@@ -1,0 +1,106 @@
+<form (ngSubmit)="onSubmit()" class="form">
+<!--
+  <p>form model state</p>
+  <pre>{{contactInfo |json}}</pre>
+-->
+  <div class="content">
+    <div class="form-field">
+      <label for="name" class="label-for-input">
+        <input
+          id="name"
+          type="text"
+          name="name"
+          class="input-field"
+          [(ngModel)]="contactInfo.name"
+        />
+        <span class="input-description" *ngIf="contactInfo.name==''">Your name</span>
+      </label>
+
+    </div>
+    <div class="form-field">
+      <label for="email" class="label-for-input" >
+
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="input-field"
+          [(ngModel)]="contactInfo.email"
+        />
+        <span  class="input-description" *ngIf="contactInfo.email==''">Your email</span>
+      </label>
+
+    </div>
+
+    <div class="form-field">
+      <label for="country" class="label-for-input" >
+        <input
+          type="text"
+          id="country"
+          name="country"
+          class="input-field"
+          [(ngModel)]="contactInfo.country"
+        />
+        <span class="input-description" *ngIf="contactInfo.country == ''">country</span>
+      </label>
+
+    </div>
+
+    <div class="form-field" >
+      <input
+        class="checkbox"
+        type="checkbox"
+        id="companyCheckBox"
+        name="companyCheckBox"
+        [(ngModel)]="contactInfo.companyCheckBox"
+      />
+      <label class="label-for-input" *ngIf="!contactInfo.companyCheckBox" >Company</label>
+      <label for="company" class="label-for-input" *ngIf="contactInfo.companyCheckBox">
+        <input
+               id="company"
+               type="text"
+               name="company"
+               class="input-field"
+               [(ngModel)]="contactInfo.companyName"
+        />
+        <span class="input-description">Your company name</span>
+      </label>
+      <!--TODO:can companyCheckbox be null?-->
+    </div>
+  </div>
+<!--
+  <div class="form-field">
+    <label for="goals">What are yours goals?</label>
+    <textarea
+      id="goals"
+      name="goals"
+      [(ngModel)]="contactInfo.goals"
+    ></textarea>
+  </div>
+-->
+  <div class="consent"></div>
+
+  <div class="textBoxContainer">
+    <div class="form-field">
+      <label for="message" class="textarea-label">message</label>
+      <textarea
+        id="message"
+        name="message"
+        class="message-input"
+        [(ngModel)]="contactInfo.message"
+      ></textarea>
+    </div>
+  </div>
+
+  <div class="submit">
+    <div class="center">
+      <button class="btn" type="submit">
+        <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+          <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+          <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+        </svg>
+        <span>HOVER ME</span>
+      </button>
+    </div>
+  </div>
+</form>

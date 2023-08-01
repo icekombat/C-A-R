@@ -20,61 +20,9 @@
 
   <section id="contact-us" class="centered-flex-container">
     <h2>Contact Us.</h2>
-    <div class="contactform">
-      <form
-        [formGroup]="form"
-        (ngSubmit)="send()"
-        id="contact_form"
-      >
-        <div>
-          <label for="name">name</label>
-          <input
-            formControlName="name"
-            type="text"
-            id="name"
-            name="name"
-          />
-        </div>
-        <div>
-          <label for="email">Email</label>
-          <input
-            formControlName="email"
-            type="email"
-            id="email"
-            name="email"
-          />
-        </div>
-          <div>
-            <label for="country">country</label>
-            <input
-              formControlName="country"
-              type="text"
-              id="country"
-              name="country"
-            />
-          </div>
-        <div>
-          <label for="company">Company</label>
-          <input
-            formControlName="company"
-            type="checkbox"
-            id="company"
-            name="company"
-          />
-        </div>
-        <div>
-          <label for="goals">What are yours goals?</label
-          >
-          <textarea
-            formControlName="goals"
-            id="goals"
-            name="goals"
-          ></textarea>
-        </div>
-        <button type="submit">
-          Send
-        </button>
-      </form>
-    </div>
+    <!-- Testing contactform component -->
+
+    <app-contact-form></app-contact-form>
+
   </section>
 

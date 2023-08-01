@@ -1,0 +1,157 @@
+.form{
+  grid-column-gap: 100px;
+  display: grid;
+  grid-template-areas:
+"content  textBoxContainer"
+"consent submit  ";
+  grid-template-columns: auto 540px;
+}
+
+.content{
+  display: flex;
+  flex-wrap: wrap;
+  grid-area: content;
+  justify-content: space-between;
+}
+
+.textBoxContainer{
+  grid-area:   textBoxContainer;
+}
+
+.textarea-label{
+  color: #f7f7f7;
+  font-weight: 400;
+}
+
+.message-input{
+  background-color: hsla(0,0%,100%,.1);
+  border: 1px solid hsla(0,0%,100%,.1);
+  border-radius: 20px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  height: 300px;
+  letter-spacing: 0;
+  line-height: 1.333;
+  margin-top: 16px;
+  padding: 20px;
+  resize: none;
+  text-align: left;
+  transition: all .5s;
+  width: 100%;
+}
+
+.consent{
+  grid-area: consent;
+}
+
+.submit{
+  grid-area: submit;
+}
+
+.form-field{
+  margin-bottom: 12px;
+  display: flex;
+  position: relative;
+  width: 100%;
+
+}
+
+.checkbox{
+
+}
+
+.label-for-input{
+  display: inline-block;
+  font-size: 18px;
+  line-height: 1.2;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.input-field{
+  color: white;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 18px;
+  height: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 20px 0 5px;
+  position: relative;
+  transition: box-shadow .4s;
+  width: 100%;
+}
+
+.input-description{
+  border-color: #777d87;
+  color: #777d87;
+  cursor: text;
+  display: flex;
+  max-height: 100%;
+  position: absolute;
+  transition: all .3s ease-in-out;
+  width: 100%;
+  font-size: 18px;
+  line-height: 1.333;
+  top: 20px;
+  left: 5px;
+}
+
+
+@media screen and (max-width: 900px) {
+
+    .form{
+      grid-template-areas:
+        "content"
+      "textBoxContainer"
+      "consent"
+      "submit";
+    }
+  }
+
+.center {
+  width: 180px;
+  height: 60px;
+  position: absolute;
+}
+
+.btn {
+  width: 180px;
+  height: 60px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #91C9FF;
+  outline: none;
+  transition: 1s ease-in-out;
+}
+
+svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  fill: none;
+  stroke: #fff;
+  stroke-dasharray: 150 480;
+  stroke-dashoffset: 150;
+  transition: 1s ease-in-out;
+}
+
+.btn:hover {
+  transition: 1s ease-in-out;
+  background: rgba(13,117,128,1);
+}
+
+.btn:hover svg {
+  stroke-dashoffset: -480;
+}
+
+.btn span {
+  color: white;
+  font-size: 18px;
+  font-weight: 100;
+}

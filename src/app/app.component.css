@@ -29,8 +29,9 @@ section{
   justify-content: flex-start;
   backdrop-filter: blur(4px);
   background: hsla(0,0%,100%,.10);
-  padding: 10px;
-  height: 50svh;
+  padding-left:50px;
+  padding-right:50px ;
+  height: 600px;
   min-height: fit-content;
 }
 
@@ -41,13 +42,15 @@ section{
   display: flex;
   flex-direction: column;
   height: 200px;
+  min-height: fit-content;
   justify-self: center;
   align-self: center;
   justify-content: space-between;
   padding: 32px;
-  margin: 10px;
   width: 400px;
   max-width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .main-heading{
@@ -70,14 +73,20 @@ section{
 /*CONTACT FORM*/
 
 .contactform{
-  border: solid 3px white;
+  /*border: solid 1px white;*/
   margin: 0 auto;
-  max-width: 650px;
-  max-height: 650px;
+  min-height: fit-content;
   position: relative;
   width: 100%;
 }
 
 #contact_form{
 
+}
+
+@media screen and (max-width: 900px) {
+
+  #contact_form{
+    flex-direction: column;
+  }
 }

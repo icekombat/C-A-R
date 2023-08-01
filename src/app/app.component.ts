@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import {ClickMode, Container, Engine, HoverMode, MoveDirection, OutMode} from "tsparticles-engine";
 import {loadSlim} from "tsparticles-slim";
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 
 @Component({
@@ -17,26 +17,34 @@ export class AppComponent implements OnInit{
 
   // @ts-ignore
   form: FormGroup;
+  //lifecycles
 
   ngOnInit(): void {
     this.buildForm();
   }
 
+  //Contactform
+
+  companyCheckbox:boolean = false;
+
   send(): void {
     //send data to backend
     const { name, email,country,company,goals } = this.form.value;
+    console.log(this.companyCheckbox)
     console.log(this.form.value)
   }
 
   private buildForm(): void {
     this.form = this.formBuilder.group({
-      name: this.formBuilder.control(null),
-      email: this.formBuilder.control(null),
-      country: this.formBuilder.control(null),
+      name: ['', Validators.required],
+      email: ['', Validators.required, Validators.email],
+      country: ['', Validators.required, Validators],
       company: this.formBuilder.control(null),
       goals:this.formBuilder.control(null)
     });
   }
+
+
 
   // Particle Background
   id:string = "particles-bg";
