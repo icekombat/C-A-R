@@ -92,5 +92,6 @@ section{
 @media screen and (max-width: 760px) {
     #contact-us{
       min-height: 800px;
+      height: 100svh;
     }
   }
