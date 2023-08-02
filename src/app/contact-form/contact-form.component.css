@@ -1,6 +1,6 @@
 #contact_form{
   width: 100%;
-  max-width: 1500px;
+  max-width: 1000px;
 }
 
 .form{
@@ -25,15 +25,21 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  align-items: center;
+}
+
+.content .form-field{
+  width: 100%;
 }
 .input-field{
   width: 100%;
 }
 .form-field{
   margin-bottom: 12px;
-  display: inline-block;
+
   position: relative;
   max-width: 500px;
+  display: flex /* was: inline-block*/
 }
 
 .textBoxContainer{
@@ -61,67 +67,133 @@
   }
 }
 
-/*Copied from old project*/
-
-.label-for-input{
-  display: inline-block;
-  font-size: 18px;
-  line-height: 1.2;
-  overflow: hidden;
+/*text input*/
+.text-input-box{
+  display: block;
   position: relative;
   width: 100%;
-}
-.textarea-label{
-  color: #f7f7f7;
-  font-weight: 400;
+  min-height: 41px;
+  min-width: 200px;
 }
 
-.message-input{
-  background-color: hsla(0,0%,100%,.1);
-  border: 1px solid hsla(0,0%,100%,.1);
-  border-radius: 20px;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 400;
-  height: 300px;
-  letter-spacing: 0;
-  line-height: 1.333;
-  margin-top: 16px;
-  padding: 20px;
+.text-input-box input,textarea{
   resize: none;
-  text-align: left;
-  transition: all .5s;
   width: 100%;
+  padding: 10px;
+  border: 1px solid white;
+  background: #1d2b3a;
+  border-radius: 5px;
+  outline: none;
+  color: #fff;
+  font-size: 1em;
+  transition: 0.5s;
 }
 
-.input-description{
-  border-color: #777d87;
-  color: #777d87;
-  cursor: text;
-  display: flex;
-  max-height: 100%;
+.text-input-box label{
   position: absolute;
-  transition: all .3s ease-in-out;
-  width: 100%;
-  font-size: 18px;
-  line-height: 1.333;
-  top: 20px;
-  left: 5px;
+  left: 0;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 1em;
+  color: white;
+  text-transform: uppercase;
+  transition: 0.5s;
 }
 
-.input-field{
-  color: white;
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid #ffffff;
-  box-sizing: border-box;
-  font-family: inherit;
-  font-size: 18px;
-  height: inherit;
-  line-height: inherit;
-  margin: 0;
-  padding: 20px 0 5px;
-  position: relative;
-  transition: box-shadow .4s;
+.text-input-box input:valid ~ label,
+.text-input-box input:focus ~ label,
+.text-input-box textarea ~ label
+{
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.65em;
+  padding: 0 10px;
+  border-left: 1px solid #00dfc4;
+  border-right: 1px solid #00dfc4;
+  background: #00dfc4;
+  color: #1d2b3a;
+}
+
+.text-input-box input:valid,
+.text-input-box input:focus,
+.text-input-box textarea
+{
+  border: 1px solid #00dfc4;
+}
+
+#message{
   width: 100%;
 }
+
+/*Checkbox*/
+.checkbox-input-box{
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-input-box label{
+  cursor: pointer;
+  display: flex;
+}
+
+.checkbox-input-box input[type='checkbox']{
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-input-box label::before{
+  content: '';
+  width: 1em;
+  height: 1em;
+  border-radius: 0.15em;
+  margin-right: 0.5em;
+  border: .05em solid white;
+
+}
+
+.checkbox-input-box label:hover::before,
+.checkbox-input-box input[type='checkbox']:hover + label::before{
+  background-color: darkcyan ;
+}
+
+.checkbox-input-box input[type='checkbox']:checked + label::before{
+  content: '\e834'; /*add icon (somehow not working rn)*/
+  background-color: #00dfc4;
+}
+
+.checkbox-input-box input[type='checkbox']:focus + label::before{
+  box-shadow: 0 0 10px #00dfc4;
+}
+/*button*/
+.btn-slide{
+  height: 41px;
+  width: 100px;
+  margin: 1rem;
+  background-color: #1d2b3a;
+  padding: .5em 1em;
+  border: 1px solid white;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  color: white;
+  z-index: 1;
+}
+
+.btn-slide::before{
+  content: '';
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background-color: #00dfc4;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.5s;
+}
+.btn-slide:hover::before,
+.btn-slide:focus::before{
+  transform: scaleX(1);
+}
+

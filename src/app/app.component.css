@@ -28,16 +28,17 @@ section{
   align-content: center;
   justify-content: flex-start;
   backdrop-filter: blur(4px);
-  background: hsla(0,0%,100%,.10);
-  padding-left:50px;
-  padding-right:50px ;
+  background: hsla(211, 33%, 17%,.50);
+  padding-left:25px;
+  padding-right:25px ;
   height: 700px;
   min-height: fit-content;
 }
 
 .flex-item{
   backdrop-filter: blur(8px);
-  background: hsla(0,0%,100%,.10);
+  /*background: hsla(0,0%,100%,.10); old coloring*/
+  background: hsla(211, 33%, 17%,.50);
   border-radius: 20px;
   display: flex;
   flex-direction: column;

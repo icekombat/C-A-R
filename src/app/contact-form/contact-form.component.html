@@ -6,68 +6,75 @@
 -->
   <div class="content grid-item">
     <div class="form-field">
-      <label for="name" class="label-for-input">
+      <div class="text-input-box">
         <input
           id="name"
           type="text"
           name="name"
-          class="input-field"
           [(ngModel)]="contactInfo.name"
+          required
         />
-          <span class="input-description" *ngIf="contactInfo.name==''">Your name</span>
-      </label>
-
+        <label for="name">Your name</label>
+      </div>
     </div>
-    <div class="form-field">
-      <label for="email" class="label-for-input" >
 
+    <div class="form-field">
+      <div class="text-input-box">
         <input
           type="email"
           id="email"
           name="email"
           class="input-field"
           [(ngModel)]="contactInfo.email"
+          required
         />
-        <span  class="input-description" *ngIf="contactInfo.email==''">Your email</span>
-      </label>
-
+        <label for="email" class="label-for-input" >Your email</label>
+      </div>
     </div>
 
     <div class="form-field">
-      <label for="country" class="label-for-input" >
+      <div class="text-input-box">
         <input
           type="text"
           id="country"
           name="country"
-          class="input-field"
           [(ngModel)]="contactInfo.country"
+          required
         />
-        <span class="input-description" *ngIf="contactInfo.country == ''">Country</span>
-      </label>
-
+        <label for="country">
+          Country
+        </label>
+      </div>
     </div>
 
-    <div class="form-field" >
-      <input
-        class="checkbox"
-        type="checkbox"
-        id="companyCheckBox"
-        name="companyCheckBox"
-        [(ngModel)]="contactInfo.companyCheckBox"
-      />
-      <label class="label-for-input" *ngIf="!contactInfo.companyCheckBox" >Company</label>
-      <label for="company" class="label-for-input" *ngIf="contactInfo.companyCheckBox">
+    <div class="form-field">
+      <div class="checkbox-input-box">
         <input
-               id="company"
-               type="text"
-               name="company"
-               class="input-field"
-               [(ngModel)]="contactInfo.companyName"
+          type="checkbox"
+          id="companyCheckBox"
+          name="companyCheckBox"
+          [(ngModel)]="contactInfo.companyCheckBox"/>
+        <label>
+          <span *ngIf="!contactInfo.companyCheckBox">Company?</span>
+        </label>
+      </div>
+
+      <div class="text-input-box">
+        <input
+          id="company"
+          type="text"
+          name="company"
+          [(ngModel)]="contactInfo.companyName"
+          *ngIf="contactInfo.companyCheckBox"
+          required
         />
-        <span class="input-description">Your company name</span>
-      </label>
+        <label for="company" class="label-for-input" *ngIf="contactInfo.companyCheckBox">
+        Company name
+        </label>
+      </div>
       <!--TODO:can companyCheckbox be null?-->
     </div>
+
   </div>
 <!--
   <div class="form-field">
@@ -79,25 +86,22 @@
     ></textarea>
   </div>
 -->
-
   <div class="textBoxContainer grid-item">
-    <div class="form-field">
-      <label for="message" class="textarea-label">
+
+      <div class="text-input-box">
         <textarea
-        id="message"
-        name="message"
-        class="message-input"
-        [(ngModel)]="contactInfo.message"
-      ></textarea>
+          id="message"
+          name="message"
+          class="message-input"
+          [(ngModel)]="contactInfo.message"
+          ></textarea>
+          <label for="message">Your message</label>
+      </div>
 
-        <span>Your message</span>
-
-      </label>
-    </div>
   </div>
 
   <div class="submit grid-item">
-      <button class="css-button-sliding-to-top--black" type="submit">
+      <button class="btn-slide" type="submit">
         send
       </button>
   </div>
