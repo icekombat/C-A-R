@@ -5,6 +5,7 @@
   <pre>{{contactInfo |json}}</pre>
 -->
   <div class="content grid-item">
+
     <div class="form-field">
       <div class="text-input-box">
         <input
@@ -21,14 +22,13 @@
     <div class="form-field">
       <div class="text-input-box">
         <input
-          type="email"
+          type="text"
           id="email"
           name="email"
-          class="input-field"
           [(ngModel)]="contactInfo.email"
           required
         />
-        <label for="email" class="label-for-input" >Your email</label>
+        <label for="email" >Your email</label>
       </div>
     </div>
 
@@ -75,17 +75,27 @@
       <!--TODO:can companyCheckbox be null?-->
     </div>
 
+    <div class="form-field">
+      <div class="multiple-choice">
+
+        <span class="question">{{this.goalsQuestion.question}}</span>
+
+        <div class="checkbox-input-box" *ngFor="let answer of this.goalsQuestion.answerOptions">
+          <div class="checkbox-input-box">
+            <input
+              type="checkbox"
+              name="companyCheckBox"
+              [(ngModel)]="answer.checked"/>
+            <label>
+              <span>{{answer.text}}</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
-<!--
-  <div class="form-field">
-    <label for="goals">What are yours goals?</label>
-    <textarea
-      id="goals"
-      name="goals"
-      [(ngModel)]="contactInfo.goals"
-    ></textarea>
-  </div>
--->
+
   <div class="textBoxContainer grid-item">
 
       <div class="text-input-box">

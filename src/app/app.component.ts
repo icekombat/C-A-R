@@ -69,7 +69,7 @@ export class AppComponent implements OnInit{
           quantity: 4,
         },
         repulse: {
-          distance: 60,
+          distance: 75,
           duration: 0.4,
         },
       },
@@ -80,7 +80,7 @@ export class AppComponent implements OnInit{
       },
       links: {
         color: "#fff",
-        distance: 100,
+        distance: 110,
         enable: true,
         opacity: 0.5,
         width: 1,
@@ -101,16 +101,16 @@ export class AppComponent implements OnInit{
           area: 800,
         },
         value: 140,
-        minimumValue:86,
+        maxValue:150,
       },
       opacity: {
         value: 0.7,
       },
       shape: {
-        type: "none",
+        type: "square",
       },
       size: {
-        value: { min: 1, max: 5 },
+        value: 1,
       },
     },
     detectRetina: true,

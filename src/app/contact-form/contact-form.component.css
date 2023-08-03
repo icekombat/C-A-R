@@ -36,10 +36,9 @@
 }
 .form-field{
   margin-bottom: 12px;
-
   position: relative;
   max-width: 500px;
-  display: flex /* was: inline-block*/
+  display: flex /* was: inline-block*/;
 }
 
 .textBoxContainer{
@@ -131,14 +130,17 @@
 }
 
 .checkbox-input-box label{
-  cursor: pointer;
   display: flex;
 }
 
 .checkbox-input-box input[type='checkbox']{
+
   cursor: pointer;
   opacity: 0;
   position: absolute;
+  margin: 0;
+  height: 1.5em;
+  width: 1.5em;
 }
 
 .checkbox-input-box label::before{
@@ -151,19 +153,27 @@
 
 }
 
-.checkbox-input-box label:hover::before,
 .checkbox-input-box input[type='checkbox']:hover + label::before{
   background-color: darkcyan ;
 }
 
 .checkbox-input-box input[type='checkbox']:checked + label::before{
-  content: '\e834'; /*add icon (somehow not working rn)*/
+  content: ''; /*add icon (somehow not working rn)*/
   background-color: #00dfc4;
 }
 
 .checkbox-input-box input[type='checkbox']:focus + label::before{
   box-shadow: 0 0 10px #00dfc4;
 }
+
+/*multiple Choice*/
+.multiple-choice{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 5px;
+}
+
 /*button*/
 .btn-slide{
   height: 41px;

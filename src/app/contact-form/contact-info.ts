@@ -5,6 +5,6 @@ email: string,
 country: string,
 companyCheckBox: boolean,
 companyName: string,
-//goals: Goals[],
+  goals:number[],
 message: string
 }
