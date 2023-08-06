@@ -1,9 +1,5 @@
 <div id="contact_form">
 <form (ngSubmit)="onSubmit()" class="form">
-<!--
-  <p>form model state</p>
-  <pre>{{contactInfo |json}}</pre>
--->
   <div class="content grid-item">
 
     <div class="form-field">
@@ -32,20 +28,17 @@
       </div>
     </div>
 
-    <div class="form-field">
-      <div class="text-input-box">
-        <input
-          type="text"
-          id="country"
-          name="country"
-          [(ngModel)]="contactInfo.country"
-          required
-        />
-        <label for="country">
-          Country
-        </label>
+     <div class="form-field">
+       <!--<label>Country</label>>-->
+      <div class="dropdown-wrapper">
+          <select [ngModel]="contactInfo.country.country" name="country" id="country">
+            <option *ngFor="let item of countries.countries" [value]="item.country" (click)="setCountry(item.id)">{{item.country}}</option>
+          </select>
+        <label *ngIf="contactInfo.country.id == -1">{{contactInfo.country.country}}</label>
       </div>
     </div>
+
+
 
     <div class="form-field">
       <div class="checkbox-input-box">
@@ -116,4 +109,6 @@
       </button>
   </div>
 </form>
-</div>
+  <!--<pre style="border: 2px solid red">{{contactInfo |json}}</pre>
+  -->
+ </div>

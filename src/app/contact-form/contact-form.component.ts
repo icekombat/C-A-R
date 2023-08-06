@@ -3,6 +3,7 @@ import {FormGroup, FormControl, Validators, FormBuilder, EmailValidator} from "@
 import {ContactInfo} from "./contact-info";
 import {FormsModule} from "@angular/forms";
 import {MultipleChoiceQuestion} from "./multipleChoiceQuestion";
+import {Countries} from "./countries";
 
 @Component({
   selector: 'app-contact-form',
@@ -17,10 +18,12 @@ export class ContactFormComponent implements OnInit{
   goalsQuestion = new MultipleChoiceQuestion(
     "Goals:", ["Risk Mitigation","Maximizing Yield","Optimizing Time Efficiency"]);
 
+  countries = new Countries();
+
   contactInfo:ContactInfo={
     name:"",
     email:"",
-    country:"",
+    country: {id :-1, country:"Country"},
     companyCheckBox:false,
     companyName:"",
     goals:[],
@@ -44,7 +47,17 @@ export class ContactFormComponent implements OnInit{
       const answer = answerOptions[index];
       if(answer.checked) this.contactInfo.goals.push(answer.id);
     }
+
+    console.log(this.contactInfo)
   }
 
+  //TODO: change to id
+  setCountry(id: number){
+    this.contactInfo.country = this.countries.countries[id];
+  }
+
+  protected readonly alert = alert;
+  protected readonly Event = Event;
+  protected readonly event = event;
 }
 
