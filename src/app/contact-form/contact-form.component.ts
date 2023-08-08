@@ -53,11 +53,13 @@ export class ContactFormComponent implements OnInit{
 
   //TODO: change to id
   setCountry(id: number){
+    console.log(id)
     this.contactInfo.country = this.countries.countries[id];
   }
 
   protected readonly alert = alert;
   protected readonly Event = Event;
   protected readonly event = event;
+  protected readonly console = console;
 }
 

@@ -31,7 +31,7 @@ section{
   background: hsla(211, 33%, 17%,.50);
   padding-left:25px;
   padding-right:25px ;
-  min-height: fit-content;
+  height: fit-content;
 }
 
 .flex-item{
@@ -89,9 +89,3 @@ section{
   justify-content: center;
 }
 
-@media screen and (max-width: 760px) {
-    #contact-us{
-      min-height: 900px;
-      height: 100svh;
-    }
-  }
