@@ -244,6 +244,8 @@
   transform: translateY(-10px);
   transition: opacity 150ms ease-in-out, transform 150ms ease-in-out ;
   border: 1px solid white;
+  height: 200px;
+  overflow: scroll;
 }
 
 .dropdown > .dropdown-link:focus + .dropdown-menu{
